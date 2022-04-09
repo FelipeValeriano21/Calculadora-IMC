@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>IMC</title>
+<style>
+    body{
+      background-image: linear-gradient(45deg,black,crimson);
+        color: rgb(255, 255, 255); 
+        height: 100vh;
+       font-family:serif ;
+    }
+
+    #borda{
+
+  border-width: medium;
+  border-style:groove ;
+  border-color: rgb(0, 255, 98);
+  margin-left: 40%;
+  margin-right: 40%;
+
+
+
+    }
+
+
+  #h2{
+
+font-family: serif;
+
+  }
+
+  #titulo{
+
+    border-style: solid;
+  border-bottom-width: 10px;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-left-width: 0;
+
+  }
+
+#bot{
+
+background-color: #13A7C9; 
+font-size: 17px;
+
+
+}
+
+#borda2{
+
+  border-width: medium;
+  border-style:groove ;
+  border-color: rgb(0, 255, 98);
+  margin-left: 40%;
+  margin-right: 40%;
+
+
+}
+
+
+
+
+</style>
+</head>
+<body>
+<center>
+    <h1 id = "titulo">Bem-vindo ao site que calcula seu IMC</h1>
+    <br></br>
+
+<div id = "borda">
+
+<h2 id = "h2">PESO:</h2>
+<input id ="peso" type="number">
+   
+<h2>ALTURA:</h2>
+<input id ="altura" type="number"> 
+
+<p></p>
+
+<button id = "bot" onclick="calcular()">Calcular</button>
+
+<p></p>
+<p></p>
+
+
+</div>
+
+<p></p>
+<p></p>
+
+
+<div id = "borda2">
+      <h2>Resultado:</h2>
+ <input id = "resultado" type="number" >
+
+ <h2>Situação:</h2>
+ <input id = "situacao" type="text" >
+
+
+<p></p>
+<p></p>
+</div>
+
+<script>
+
+    function calcular(){
+
+        var altura = document.getElementById("altura").value
+        var peso = document.getElementById("peso").value;
+        console.log(altura)
+        console.log(peso)
+
+        var resultado = peso/(altura*altura)
+        console.log(resultado)
+
+        document.getElementById('resultado').value = resultado;
+
+    if (resultado < 18.5) {
+
+      document.getElementById('situacao').value = "MAGREZA";
+
+
+    }else if((resultado >= 18.5) && (resultado <=24.9)){
+
+      document.getElementById('situacao').value = "NORMAL";
+
+    }else if((resultado >= 25) && (resultado <=29.9)){
+
+    document.getElementById('situacao').value = "SOBREPESO	I";
+
+}else if((resultado >= 30) && (resultado <=39.9)){
+
+document.getElementById('situacao').value = "OBESIDADE	II";
+
+}else if (resultado >= 40) {
+ 
+  document.getElementById('situacao').value = "OBESIDADE GRAVE	III";
+
+}else{
+
+  document.getElementById('situacao').value = "VALOR INVALIDO";
+
+}
+
+
+    }
+
+
+    
+</script>
+</body>
+</html>
+
